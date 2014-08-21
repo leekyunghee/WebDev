@@ -8,7 +8,7 @@ define(function(require) {
 
 	var model				= require('models/login');
 	var tpl 				= require('text!tpl/login.html');
-	var template = _.template(tpl);
+	var template 			= _.template(tpl);
 
 	return Backbone.View.extend({
 		render : function() {
@@ -28,7 +28,6 @@ define(function(require) {
 			});
 			
 			if (model.get('successYn') == true){
-//    			location.hash = '#employeeList';
 				Backbone.pageMove.employees();	
 			}else {
     			alert("id or password is not valid");

@@ -33,7 +33,6 @@ define(function (require) {
         },
         remove: function(){
         	console.log("override view remove");
-        	
         	this.$el.remove();
         	this.stopListening();
         	return this;

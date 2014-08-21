@@ -6,18 +6,16 @@ define(function (require) {
         _                   = require('underscore'),
         Backbone            = require('backbone'),
         tpl		            = require('text!tpl/EmployeeDetail.html');
-//        tpl2		        = require('text!tpl/EmployeeEdit.html');
     
     return Backbone.View.extend({
 
         template : _.template(tpl),
-//    	template2 : _.template(tpl2),
     	initialize: function (options) {
         	console.log("employeeDetail initialize()");
         	
         	var self = this;
         	// 메모리에 데이터를 담아줘야 하지만 viewOption에서 자동으로 해주기 때문에 다른 메소드에서 사용 할 수 있다.
-//        	this.model = options.model;
+        	// this.model = options.model;
         	
         	// 이벤트 청취
         	// change event는 model.set 함수 호출시 발생
@@ -35,7 +33,6 @@ define(function (require) {
         events: {
             "click #EditBtn"   		: "employeeEditView",
             "click #DeleteBtn"   	: "destroy"
-//            "click #SaveBtn"   		: "edit"
         },
         
         remove: function(){
@@ -61,45 +58,8 @@ define(function (require) {
             return this;
         },
         employeeEditView: function(event){
-//        	location.hash="#employeeEdit/"+this.id;
         	Backbone.pageMove.employeeEdit(this.id);
-//        	console.log("employeeDetail employeeEdit()");
-//        	this.$el.empty();
-//        	this.$el.append(this.template2(this.model.toJSON()));
-//        	return this;
         },
-        
-//        edit: function(event){
-//        	console.log("employeeDetail employeeEditSave()");
-//			var con = confirm("수정 하시겠습니까?");
-//			if(con){
-//				this.model.save({
-//                    id:$('#txtid').val(), 
-//                    firstName:$('#txtFirstName').val(), 
-//                    lastName:$('#txtLastName').val(), 
-//                    title:$('#selTitle').val(), 
-//                    managerName:$('#txtManagerName').val(), 
-//                    managerId:$('#txtManagerId').val(), 
-//                    officePhone:$('#txtOfficePhone').val(), 
-//                    cellPhone:$('#txtCellPhone').val(), 
-//                    city:$('#txtCity').val(), 
-//                    email:$('#txtEmail').val(), 
-//                    twitterId:$('#txtTwitter').val(), 
-//                    pic:$('#imgName').val(), 
-//                    blog:$('#txtBlog').val()
-//                }, 
-//                {
-//                	wait:true, 
-//                	silent:true,
-//                	success:function(model, resp, options){
-//                		console.log("강제 이벤트 발생");
-        				// 성공 했을 때 무조건 발생 
-//                		model.trigger("change");
-//                	},
-//                	error:function(model, resp, options){alert(resp);}
-//                });
-//			}
-//        },
         
         destroy: function(event){
         	console.log("employeeDetail employeeDelete()");
@@ -113,7 +73,6 @@ define(function (require) {
         },
         
         destroyed: function(){
-//        	location.hash="#employees";
         	Backbone.pageMove.employees();
         }
     });

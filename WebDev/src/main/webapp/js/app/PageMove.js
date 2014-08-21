@@ -8,5 +8,4 @@ define(function (require) {
             "employeeAdd": function(){location.href="#employeeAdd";},
             "employeeEdit": function(id){location.href="#employeeEdit/"+id;}
 	};
-    
 });
