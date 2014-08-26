@@ -6,4 +6,4 @@
   * loginRouter.js 와 employeeRouter.js 의 파일을 추가 
   * validation 적용 및 테스트 
   * 아이디 비밀번호를 입력시 alert.js와 modal.js를 이용해 validation을 체크를 한다. 
-  * validate 메소드 사용
+  * model.validate 메소드 사용
